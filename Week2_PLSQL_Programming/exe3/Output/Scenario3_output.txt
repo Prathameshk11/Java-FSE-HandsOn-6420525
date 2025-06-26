@@ -1,0 +1,30 @@
+
+PL/SQL procedure successfully completed.
+
+
+ACCOUNT_ID ACCOUNT_TYPE            BALANCE
+---------- -------------------- ----------
+      1001 savings                   10100
+      1002 savings                   15150
+      1003 current                    8000
+
+
+PL/SQL procedure successfully completed.
+
+
+    EMP_ID NAME                                                  DEPT_ID     SALARY
+---------- -------------------------------------------------- ---------- ----------
+         1 John                                                       10      55000
+         2 Alice                                                      10      66000
+         3 Bob                                                        20      55000
+
+
+PL/SQL procedure successfully completed.
+
+
+ACCOUNT_ID ACCOUNT_TYPE            BALANCE
+---------- -------------------- ----------
+      1001 savings                    8100
+      1002 savings                   17150
+      1003 current                    8000
+

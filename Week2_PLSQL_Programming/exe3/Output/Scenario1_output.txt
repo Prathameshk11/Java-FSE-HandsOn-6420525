@@ -1,0 +1,10 @@
+
+PL/SQL procedure successfully completed.
+
+
+ACCOUNT_ID ACCOUNT_TYPE            BALANCE
+---------- -------------------- ----------
+      1001 savings                   10100
+      1002 savings                   15150
+      1003 current                    8000
+
