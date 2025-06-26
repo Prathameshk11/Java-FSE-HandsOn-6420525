@@ -1,0 +1,3 @@
+Reminder: John (ID: 1) has a loan due on 06-JUL-2025
+Reminder: Bob (ID: 3) has a loan due on 16-JUL-2025
+
