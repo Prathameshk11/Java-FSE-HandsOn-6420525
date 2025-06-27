@@ -1,0 +1,5 @@
+"C:\Program Files\Java\jdk-21\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.2\lib\idea_rt.jar=54800:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.2\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath "C:\Users\prath\OneDrive\Desktop\Java-FSE-HandsOn-Prathamesh\Week2_JUnit_Mockito_SL4J\SL4J Logging exercises\SLF4J_Logging_Exercise\target\classes;C:\Users\prath\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\prath\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\prath\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar" LoggingExample
+13:11:03.912 [main] ERROR LoggingExample - This is an error message
+13:11:03.917 [main] WARN LoggingExample - This is a warning message
+
+Process finished with exit code 0
