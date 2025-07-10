@@ -1,0 +1,2 @@
+15:05:42.471 [main] INFO com.cognizant.springlearn.SpringlearnApplication -- Inside main
+15:05:42.780 [main] INFO com.cognizant.springlearn.SpringlearnApplication -- Country : Country [code=IN, name=India]
