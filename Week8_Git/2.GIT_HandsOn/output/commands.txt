@@ -1,0 +1,61 @@
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/Java-FSE-HandsOn-Prathamesh/GitDemo2 (main)
+$ cd ~/OneDrive/Desktop
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop
+$ cd GitDemo/
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo
+$ mkdir GitIgnoreLab
+cd GitIgnoreLab
+git init
+Initialized empty Git repository in C:/Users/prath/OneDrive/Desktop/GitDemo/GitIgnoreLab/.git/
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo/GitIgnoreLab (master)
+$ echo "This is a log file" > error.log
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo/GitIgnoreLab (master)
+$ mkdir log
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo/GitIgnoreLab (master)
+$ echo "Log details" > log/test.txt
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo/GitIgnoreLab (master)
+$ notepad++ .gitignore
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo/GitIgnoreLab (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo/GitIgnoreLab (master)
+$ git add .gitignore
+git commit -m "Ignore all .log files and log folder"
+[master (root-commit) 2d11d83] Ignore all .log files and log folder
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .gitignore
+
+ 
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo/GitIgnoreLab (main)
+$ git remote set-url origin https://gitlab.com/Prathameshk11/week8-git.git
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo/GitIgnoreLab (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 247 bytes | 247.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://gitlab.com/Prathameshk11/week8-git.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo/GitIgnoreLab (main)
+$
+
