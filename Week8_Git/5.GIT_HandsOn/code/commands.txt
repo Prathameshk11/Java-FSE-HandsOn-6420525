@@ -1,0 +1,27 @@
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ ^C
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git branch
+* main
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git pull origin main
+From https://gitlab.com/Prathameshk11/week8-git
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git push origin main
+Everything up-to-date
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$
