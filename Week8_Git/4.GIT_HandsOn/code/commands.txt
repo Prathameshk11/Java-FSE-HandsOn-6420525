@@ -1,0 +1,127 @@
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git checkout -b GitWork
+Switched to a new branch 'GitWork'
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (GitWork)
+$ echo "<greeting>Hello from GitWork branch</greeting>" > hello.xml
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (GitWork)
+$ git status
+On branch GitWork
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.xml
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (GitWork)
+$ git add hello.xml
+warning: in the working copy of 'hello.xml', LF will be replaced by CRLF the next time Git touches it
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (GitWork)
+$ git commit -m "Added hello.xml in GitWork branch"
+[GitWork 4f47cba] Added hello.xml in GitWork branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (GitWork)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ echo "<greeting>Hello from MAIN branch</greeting>" > hello.xml
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git add hello.xml
+git commit -m "Added hello.xml in main with different content"
+warning: in the working copy of 'hello.xml', LF will be replaced by CRLF the next time Git touches it
+[main bd4bcd3] Added hello.xml in main with different content
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git log --oneline --graph --decorate --all
+* bd4bcd3 (HEAD -> main) Added hello.xml in main with different content
+| * 4f47cba (GitWork) Added hello.xml in GitWork branch
+|/
+*   841b2ec (origin/main) Merge branch 'GitLabBranch' into 'main'
+|\
+| * 4bc2b00 (origin/GitLabBranch) Added file3.txt for GitLab MR
+|/
+* 18c4c33 Added file1 and file2 in GitNewBranch
+* 8989b03 Re-added .gitignore
+* 2d11d83 Ignore all .log files and log folder
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git diff GitWork
+diff --git a/hello.xml b/hello.xml
+index 181e8d0..76616e9 100644
+--- a/hello.xml
++++ b/hello.xml
+@@ -1 +1 @@
+-<greeting>Hello from GitWork branch</greeting>
++<greeting>Hello from MAIN branch</greeting>
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git merge GitWork
+Auto-merging hello.xml
+CONFLICT (add/add): Merge conflict in hello.xml
+Automatic merge failed; fix conflicts and then commit the result.
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main|MERGING)
+$ git add hello.xml
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main|MERGING)
+$ git commit -m "Resolved merge conflict in hello.xml"
+[main 838ab8f] Resolved merge conflict in hello.xml
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git branch
+  GitWork
+* main
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git branch -d GitWork
+Deleted branch GitWork (was 4f47cba).
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git log --oneline --graph --decorate
+*   838ab8f (HEAD -> main) Resolved merge conflict in hello.xml
+|\
+| * 4f47cba Added hello.xml in GitWork branch
+* | bd4bcd3 Added hello.xml in main with different content
+|/
+*   841b2ec (origin/main) Merge branch 'GitLabBranch' into 'main'
+|\
+| * 4bc2b00 (origin/GitLabBranch) Added file3.txt for GitLab MR
+|/
+* 18c4c33 Added file1 and file2 in GitNewBranch
+* 8989b03 Re-added .gitignore
+* 2d11d83 Ignore all .log files and log folder
+
+prath@HP14 MINGW64 ~/Onedrive/Desktop/GitDemo (main)
+$ git push origin main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 815 bytes | 815.00 KiB/s, done.
+Total 9 (delta 4), reused 0 (delta 0), pack-reused 0
+To https://gitlab.com/Prathameshk11/week8-git.git
+   841b2ec..838ab8f  main -> main
