@@ -1,0 +1,129 @@
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (main)
+$ git branch GitNewBranch
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (main)
+$ git checkout GitNewBranch
+Switched to branch 'GitNewBranch'
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (GitNewBranch)
+$ echo "This is my work in new branch" > file1.txt
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (GitNewBranch)
+$ echo "Another file content" > file2.txt
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (GitNewBranch)
+$ git add file1.txt file2.txt
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'file2.txt', LF will be replaced by CRLF the next time Git touches it
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (GitNewBranch)
+$ git commit -m "Added file1 and file2 in GitNewBranch"
+[GitNewBranch 18c4c33] Added file1 and file2 in GitNewBranch
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (GitNewBranch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (main)
+$ git diff main GitNewBranch
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..022d414
+--- /dev/null
++++ b/file1.txt
+@@ -0,0 +1 @@
++This is my work in new branch
+diff --git a/file2.txt b/file2.txt
+new file mode 100644
+index 0000000..729269d
+--- /dev/null
++++ b/file2.txt
+@@ -0,0 +1 @@
++Another file content
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (main)
+$ git merge GitNewBranch
+Updating 8989b03..18c4c33
+Fast-forward
+ file1.txt | 1 +
+ file2.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (main)
+$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (7/7), 627 bytes | 156.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://gitlab.com/Prathameshk11/week8-git.git
+   2d11d83..18c4c33  main -> main
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (main)
+$ git branch -d GitNewBranch
+Deleted branch GitNewBranch (was 18c4c33).
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (main)
+$ git checkout -b GitLabBranch
+Switched to a new branch 'GitLabBranch'
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (GitLabBranch)
+$ echo "Change for GitLab MR demo" > file3.txt
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (GitLabBranch)
+$ git add file3.txt
+warning: in the working copy of 'file3.txt', LF will be replaced by CRLF the next time Git touches it
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (GitLabBranch)
+$ git commit -m "Added file3.txt for GitLab MR"
+[GitLabBranch 4bc2b00] Added file3.txt for GitLab MR
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3.txt
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (GitLabBranch)
+$ git push origin GitLabBranch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 323 bytes | 323.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote:
+remote: To create a merge request for GitLabBranch, visit:
+remote:   https://gitlab.com/Prathameshk11/week8-git/-/merge_requests/new?merge_request%5Bsource_branch%5D=GitLabBranch
+remote:
+To https://gitlab.com/Prathameshk11/week8-git.git
+ * [new branch]      GitLabBranch -> GitLabBranch
+
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (GitLabBranch)
+$ git checkout main
+git pull origin main
+git branch -d GitLabBranch
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 267 bytes | 66.00 KiB/s, done.
+From https://gitlab.com/Prathameshk11/week8-git
+ * branch            main       -> FETCH_HEAD
+   18c4c33..841b2ec  main       -> origin/main
+Updating 18c4c33..841b2ec
+Fast-forward
+ file3.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3.txt
+Deleted branch GitLabBranch (was 4bc2b00).
+
+prath@HP14 MINGW64 ~/OneDrive/Desktop/GitDemo (main)
+$
